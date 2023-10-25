@@ -2,13 +2,10 @@
 import {TextInput, View, Button, Alert, Text} from 'react-native';
 import React, {useEffect, useState } from 'react';
 import * as RootNavigation from './../../Navigations/rootNavigation';
-//import database, { firebase } from '@react-native-firebase/database';
+
 import {openDatabase} from 'react-native-sqlite-storage';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import styles from './styles';
-import UserList from '../UserList';
 import routes from '..';
 
 let db = openDatabase({name: 'UserDatabase.db'});

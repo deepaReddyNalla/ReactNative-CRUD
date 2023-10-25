@@ -2,10 +2,7 @@
 import {View, TouchableOpacity, FlatList, Text} from 'react-native';
 import React, { useEffect, useState } from 'react';
 import * as RootNavigation from './../../Navigations/rootNavigation';
-import UpdateData from '../UpdateData';
 import styles from './styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import {openDatabase} from 'react-native-sqlite-storage';
 import { useIsFocused } from '@react-navigation/native';
 import routes from '..';

@@ -6,7 +6,6 @@ import {openDatabase} from 'react-native-sqlite-storage';
 
 import styles from './styles';
 import { useRoute } from '@react-navigation/native';
-import UserList from '../UserList';
 import routes from '..';
 let db = openDatabase({name: 'UserDatabase.db'});
 
