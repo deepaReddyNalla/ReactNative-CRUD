@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {View, TouchableOpacity, FlatList, Text} from 'react-native';
+import {View, TouchableOpacity, FlatList, Text, Alert} from 'react-native';
 import React, { useEffect, useState } from 'react';
 import * as RootNavigation from './../../Navigations/rootNavigation';
 import styles from './styles';

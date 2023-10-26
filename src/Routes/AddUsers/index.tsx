@@ -13,6 +13,23 @@ let db = openDatabase({name: 'UserDatabase.db'});
 const AddUsers = () => {
   const [name, setName] = useState('');
   const [task, setTask] = useState('');
+  const handleSubmit = () => {
+    if (!name.trim()) {
+      Alert.alert('Please Enter Name');
+      return;
+    }
+    else if (!task.trim()) {
+      Alert.alert('Please Enter Task');
+      return;
+    }
+    else{
+      saveUser();
+    }
+  };
+  const clearFields = () => {
+    setName('');
+    setTask('');
+  };
   const saveUser = () => {
     console.log(name, task);
     db.transaction(function (tx) {
@@ -28,12 +45,12 @@ const AddUsers = () => {
               [
                 {
                   text: 'Ok',
-                  onPress: () => RootNavigation.navigate(routes.UserList),
+                  onPress: () =>{clearFields(); RootNavigation.navigate(routes.UserList) },
                 },
               ],
               {cancelable: false},
             );
-          } else alert('users created failed');
+          } else Alert.alert('users created failed');
         },
         error => {
           console.log(error);
@@ -70,7 +87,7 @@ const AddUsers = () => {
       <TextInput style={styles.input} placeholder='Enter Name' onChangeText={(txt) => setName(txt)} value={name}/>
       <TextInput style={styles.input} placeholder='Enter Task' onChangeText={(txt) => setTask(txt)} value={task}/>
       <View style={styles.buttonStyle}>
-      <Button title={'Submit'} onPress={() => {saveUser()}}/>
+      <Button title={'Submit'} onPress={handleSubmit}/>
       </View>
       </View>
   );
